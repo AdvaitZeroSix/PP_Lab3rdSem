@@ -17,9 +17,10 @@
 // • multiplyMatrix()
 // • transposeMatrix()
 // • displayMatrix()
+
 #include<stdio.h>
-#define MAX 10
-void readMatrix(int mat[MAX][MAX], int rows, int cols){
+#define max 10
+void readMatrix(int mat[max][max], int rows, int cols){
 int i,j;
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++)
@@ -28,7 +29,7 @@ int i,j;
         }
     }
 }
-void addMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows, int cols){
+void addMatrix(int a[max][max], int b[max][max], int result[max][max], int rows, int cols){
     int i,j;
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++)
@@ -37,7 +38,7 @@ void addMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows,
         }
     }
 }
-void subtractMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows, int cols){
+void subtractMatrix(int a[max][max], int b[max][max], int result[max][max], int rows, int cols){
     int i,j;
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++){
@@ -45,7 +46,7 @@ void subtractMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int 
         }
     }
 }
-void multiplyMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int r1, int c1,int c2){
+void multiplyMatrix(int a[max][max], int b[max][max], int result[max][max], int r1, int c1,int c2){
     int i,j,k;
     for(i=0;i<r1;i++){
         for(j=0;j<c2;j++){
@@ -56,7 +57,7 @@ void multiplyMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int 
         }
     }
 }
-void transposeMatrix(int mat[MAX][MAX], int trans[MAX][MAX], int rows, int cols){
+void transposeMatrix(int mat[max][max], int trans[max][max], int rows, int cols){
     int i,j;
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++){
@@ -64,7 +65,7 @@ void transposeMatrix(int mat[MAX][MAX], int trans[MAX][MAX], int rows, int cols)
         }
     }
 }
-void displayMatrix(int mat[MAX][MAX], int rows, int cols){
+void displayMatrix(int mat[max][max], int rows, int cols){
     int i,j;
     for(i=0;i<rows;i++){
         for(j=0;j<cols;j++){
@@ -74,12 +75,13 @@ void displayMatrix(int mat[MAX][MAX], int rows, int cols){
     }
 }
 int main(){
-    int A[MAX][MAX], B[MAX][MAX], C[MAX][MAX], T[MAX][MAX];
+    int A[max][max], B[max][max], C[max][max], T[max][max];
     int r1, c1, r2, c2;
     int choice;
     int matrixRead = 0;
     while(1){
         printf("Enter your choice \n 1. Read Matrix \n 2. Matrix Addition \n 3. Matrix Subtraction \n 4. Matrix Multiplication \n 5. Matrix Transpose \n 6. Display Matrix \n 7. Exit\n");
+        
         if (scanf("%d", &choice) != 1){
             printf("Invalid input\n");
             while(getchar()!='\n');
@@ -96,7 +98,7 @@ int main(){
                     printf("Invalid input!\n");
                     return 0;
                 }
-                if(r1<=0 || c1<=0 || r1>MAX || c1>MAX){
+                if(r1<=0 || c1<=0 || r1>max || c1>max){
                     printf("Invalid dimensions for Matrix A!\n");
                     break;
                 }
@@ -105,7 +107,7 @@ int main(){
                     printf("Invalid input!\n");
                     return 0;
                 }
-                if(r2<=0 || c2<=0 || r2>MAX || c2>MAX){
+                if(r2<=0 || c2<=0 || r2>max || c2>max){
                     printf("Invalid dimensions for Matrix B!\n");
                     break;
                 }
