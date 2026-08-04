@@ -17,7 +17,6 @@
 // • multiplyMatrix()
 // • transposeMatrix()
 // • displayMatrix()
-
 #include<stdio.h>
 #define MAX 10
 void readMatrix(int mat[MAX][MAX], int rows, int cols){
@@ -46,14 +45,33 @@ void subtractMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int 
         }
     }
 }
-void ReadMultiplication(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int r1, int c1,int c2){
-
+void multiplyMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int r1, int c1,int c2){
+    int i,j,k;
+    for(i=0;i<r1;i++){
+        for(j=0;j<c2;j++){
+            result[i][j]=0;
+            for(k=0;k<c1;k++){
+                result[i][j]+=a[i][k]*b[k][j];
+            }
+        }
+    }
 }
-void TransposeMatrix(int mat[MAX][MAX], int trans[MAX][MAX], int rows, int cols){
-
+void transposeMatrix(int mat[MAX][MAX], int trans[MAX][MAX], int rows, int cols){
+    int i,j;
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            trans[j][i]=mat[i][j];
+        }
+    }
 }
 void displayMatrix(int mat[MAX][MAX], int rows, int cols){
-
+    int i,j;
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            printf("%4d",mat[i][j]);
+        }
+        printf("\n");
+    }
 }
 int main(){
     int A[MAX][MAX], B[MAX][MAX], C[MAX][MAX], T[MAX][MAX];
@@ -62,7 +80,6 @@ int main(){
     int matrixRead = 0;
     while(1){
         printf("Enter your choice \n 1. Read Matrix \n 2. Matrix Addition \n 3. Matrix Subtraction \n 4. Matrix Multiplication \n 5. Matrix Transpose \n 6. Display Matrix \n 7. Exit\n");
-        
         if (scanf("%d", &choice) != 1){
             printf("Invalid input\n");
             while(getchar()!='\n');
@@ -138,11 +155,27 @@ int main(){
                 displayMatrix(C,r1,c2);
                 break;
             case 5:
+                if(matrixRead==0){
+                    printf("Read Matrix A first!\n");
+                    break;
+                }
+                transposeMatrix(A,T,r1,c1);
+                printf("\nTranspose of Matrix A:\n");
+                displayMatrix(T,c1,r1);
                 break;
             case 6:
+                if(matrixRead==0){
+                    printf("Read matrices first!\n");
+                    break;
+                }
+                printf("\nMatrix A:\n");
+                displayMatrix(A,r1,c1);
+                printf("\nMatrix B:\n");
+                displayMatrix(B,r2,c2);
                 break;
-            default:
-                printf("Exit");
+            case 7:
+                printf("Program Terminated.\n");
+                return 0;
         };
     }
     return 0;
