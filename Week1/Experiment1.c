@@ -38,8 +38,13 @@ void addMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows,
         }
     }
 }
-void MatrixSubtraction(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows, int cols){
-
+void subtractMatrix(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int rows, int cols){
+    int i,j;
+    for(i=0;i<rows;i++){
+        for(j=0;j<cols;j++){
+            result[i][j]=a[i][j]-b[i][j];
+        }
+    }
 }
 void ReadMultiplication(int a[MAX][MAX], int b[MAX][MAX], int result[MAX][MAX], int r1, int c1,int c2){
 
@@ -107,8 +112,30 @@ int main(){
                 displayMatrix(C,r1,c1);
                 break;
             case 3:
+                if(matrixRead==0){
+                    printf("Read matrices first!\n");
+                    break;
+                }
+                if(r1!=r2 || c1!=c2){
+                    printf("Subtraction not possible.\n");
+                    break;
+                }
+                subtractMatrix(A,B,C,r1,c1);
+                printf("\nResult of Subtraction:\n");
+                displayMatrix(C,r1,c1);
                 break;
             case 4:
+                if(matrixRead==0){
+                    printf("Read matrices first!\n");
+                    break;
+                }
+                if(c1!=r2){
+                    printf("Multiplication not possible.\n");
+                    break;
+                }
+                multiplyMatrix(A,B,C,r1,c1,c2);
+                printf("\nResult of Multiplication:\n");
+                displayMatrix(C,r1,c2);
                 break;
             case 5:
                 break;
