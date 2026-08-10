@@ -32,7 +32,7 @@ Programming-Paradigms/
 | Week    | Topic                                |
 | ------- | ------------------------------------ |
 | Week 1  | Parameter Passing & Parameter Safety |
-| Week 2  | *To be updated*                      |
+| Week 2  | Pointers                      |
 
 ## Languages
 
