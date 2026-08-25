@@ -32,7 +32,8 @@ Programming-Paradigms/
 | Week    | Topic                                |
 | ------- | ------------------------------------ |
 | Week 1  | Parameter Passing & Parameter Safety |
-| Week 2  | Pointers                      |
+| Week 2  | Pointers                             |
+| Week 3  | Functions With Arrays and Structures |
 
 ## Languages
 
