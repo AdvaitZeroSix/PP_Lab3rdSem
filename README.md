@@ -1,47 +1,35 @@
-# PP_Lab3rdSem
+# Programming Paradigms Lab (Semester 3)
 
-Weekly laboratory work and solutions for the Programming Paradigms course.
+Lab work for the Programming Paradigms course, B.Tech CSE at Manipal Institute of Technology. The first five weeks are in C and the rest are in Java.
 
-The repository contains manuals, experiment solutions, and implementations organized week-wise.
+| Week | Language | Topic |
+| ---- | -------- | ----- |
+| 1 | C | Parameter passing and parameter safety |
+| 2 | C | Pointers |
+| 3 | C | Functions with arrays and structures |
+| 4 | C | Recursion and linked lists |
+| 5 | C | Process memory layout |
+| 6 | Java | Inheritance and interfaces |
+| 7 | Java | Collections: `ArrayList`, `HashSet` and `HashMap` |
+| 8 | Java | Class hierarchies and polymorphism |
+| 9 | Java | Reflection and dynamic class loading |
+| 10 | Java | Threads |
 
-## Repository Structure
+`LabMidSem/` has the lab mid-semester paper and my C solution.
+
+## Layout
 
 ```text
-Programming-Paradigms/
-│
-├── Week 1/
-│   ├── Manual/
-│   ├── Experiment 1/
-│   └── Experiment 2/
-│
-├── Week 2/
-│   ├── Manual/
-│   ├── Experiment 1/
-│   └── Experiment 2/
-│
-├── Week 3/
-│   ├── Manual/
-│   ├── Experiment 1/
-│   └── Experiment 2/
-│
-└── ...
+Week1/ ... Week10/
+├── Experiment*.c or Question*.java   my solutions
+└── PDFs from the course              manuals and reference notes
 ```
 
-## Weekly Topics
+## Run a solution
 
-| Week    | Topic                                |
-| ------- | ------------------------------------ |
-| Week 1  | Parameter Passing & Parameter Safety |
-| Week 2  | Pointers                             |
-| Week 3  | Functions With Arrays and Structures |
+```bash
+gcc Week2/Experiment3.c -o exp && ./exp                      # C weeks
+javac -d out Week10/Question1.java && java -cp out week10.Question1   # Java weeks
+```
 
-## Languages
-
-* C
-* Go
-
-## About
-
-This repository contains my Programming Paradigms laboratory work, organized week-wise for easy reference and revision.
-
-Each week includes the corresponding manual and experiment solutions.
+Java files in Weeks 7 to 10 start with a `package` line (for example `package week10;`), so compile from the repo root and run by the full name. Week 3 keeps its programs in sub-folders.
